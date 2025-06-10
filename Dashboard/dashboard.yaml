@@ -1,0 +1,45 @@
+apiVersion: appconnect.ibm.com/v1beta1
+kind: Dashboard
+metadata:
+  name: db-prod
+  labels:
+    backup.appconnect.ibm.com/component: dashboard
+  namespace: ibm-ace
+spec:
+  license:
+    accept: true
+    license: L-KPRV-AUG9NC
+    use: AppConnectEnterpriseNonProductionFREE
+  pod:
+    containers:
+      content-server:
+        resources:
+          limits:
+            memory: 512Mi
+          requests:
+            cpu: 50m
+            memory: 50Mi
+      control-ui:
+        resources:
+          limits:
+            memory: 512Mi
+          requests:
+            cpu: 50m
+            memory: 125Mi
+  switchServer:
+    name: default
+  authentication:
+    integrationKeycloak:
+      enabled: false
+  authorization:
+    integrationKeycloak:
+      enabled: false
+  api:
+    enabled: true
+  storage:
+    size: 5Gi
+    type: persistent-claim
+    class: nfs-csi
+  displayMode: IntegrationRuntimes
+  replicas: 3
+  version: '13.0'
