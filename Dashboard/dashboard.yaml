@@ -26,6 +26,9 @@ spec:
           requests:
             cpu: 50m
             memory: 125Mi
+  ingress:
+    enabled: true
+    domain: apps.epical-test.ccs.shibuya.se
   switchServer:
     name: default
   authentication:
