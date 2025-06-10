@@ -44,5 +44,5 @@ spec:
     type: persistent-claim
     class: nfs-csi
   displayMode: IntegrationRuntimes
-  replicas: 3
+  replicas: 1
   version: '13.0'
