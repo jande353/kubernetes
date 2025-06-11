@@ -10,6 +10,8 @@ spec:
     accept: true
     license: L-KPRV-AUG9NC
     use: AppConnectEnterpriseNonProductionFREE
+  securityContext:
+    fsGroup: 2000
   pod:
     containers:
       content-server:
