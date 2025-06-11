@@ -14,15 +14,8 @@ spec:
     fsGroup: 2000
   pod:
     initContainers:
-      content-server-init:
-        securityContext:
+      securityContext:
           runAsUser: 0
-        resources:
-          limits:
-            memory: 512Mi
-          requests:
-            cpu: 50m
-            memory: 50Mi 
     containers:
       content-server:
         securityContext:
