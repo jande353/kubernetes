@@ -12,9 +12,9 @@ spec:
     use: AppConnectEnterpriseNonProductionFREE
   pod:
     containers:
-      securityContext:
-          runAsUser: 0
       content-server:
+        securityContext:
+          runAsUser: 0
         resources:
           limits:
             memory: 512Mi
@@ -22,6 +22,8 @@ spec:
             cpu: 50m
             memory: 50Mi
       control-ui:
+        securityContext:
+          runAsUser: 0
         resources:
           limits:
             memory: 512Mi
