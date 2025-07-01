@@ -20,6 +20,15 @@ spec:
         runAsUser: 0
         fsGroup: 2000
     containers:
+      content-server-init:
+        resources:
+          limits:
+            memory: 512Mi
+          requests:
+            cpu: 50m
+            memory: 50Mi
+        volumeMounts:
+          readOnly: false
       content-server:
         resources:
           limits:
